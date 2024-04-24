@@ -1,0 +1,127 @@
+<!-- 
+  1. create form where user adds all info about book
+  2. by submitting the values new instance of Book constructor is created with key pairs values i choose
+  3. all instances are save into the array (i need array functions such as pop or push)
+  4.foreach the array with the objects and append them using DOM
+  5. add buttons to remove the book
+  6. add buttons to change the state of the reading of the book  
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        /* * {
+    font-family: "Cormorant Garamond", serif;
+} */
+
+
+        body {
+            background-color: rgb(250, 235, 215);
+        }
+
+        form>* {
+            margin-bottom: 0.75rem;
+        }
+
+        legend {
+            font-size: 1rem;
+        }
+
+        table {
+            display: none;
+        }
+
+        .radios {
+            display: flex;
+            gap: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>My digital library</h1>
+
+        <div class="mt-3 mb-3 ">
+            <button id="addBtn" class="btn btn-dark">Add Book</button>
+            <button id="showBtn" class="btn btn-light">Show All</button>
+        </div>
+
+
+        <form action="">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" name="author" id="author" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pages">Pages</label>
+                <input type="number" class="form-control" name="pages" id="pages" required>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Reading status</legend>
+                <div class="radios">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="readingStatus" id="radioOne" required>
+                        <label class="form-check-label" for="radioOne">Did not start</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="readingStatus" id="radioTwo">
+                        <label class="form-check-label" for="radioTwo">Reading</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="readingStatus" id="radioThree">
+                        <label class="form-check-label" for="radioThree">Finished</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Edit Status</th>
+                    <th scope="col">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>
